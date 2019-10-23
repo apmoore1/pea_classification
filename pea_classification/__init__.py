@@ -1,1 +1,1 @@
-from pea_classification import classifiers
+from pea_classification import classifiers, dataset_util
