@@ -19,7 +19,10 @@ setup(name='pea_classification',
           'xlrd==1.2.0',
           'xlwt==1.3.0',
           'scikit-learn==0.21.3',
-          'imbalanced-learn==0.5.0'
+          'imbalanced-learn==0.5.0',
+          'requests>=2.18',
+          'skorch==0.6.0',
+          'torch==1.3.0'
       ],
       python_requires='>=3.6.1',
       packages=find_packages(),
