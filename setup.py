@@ -21,8 +21,9 @@ setup(name='pea_classification',
           'scikit-learn==0.21.3',
           'imbalanced-learn==0.5.0',
           'requests>=2.18',
-          'skorch==0.6.0',
-          'torch==1.3.0'
+          'joblib==0.14.0',
+          'spacy==2.2.1',
+          'openpyxl==3.0.0'
       ],
       python_requires='>=3.6.1',
       packages=find_packages(),

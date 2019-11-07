@@ -1,4 +1,7 @@
-data
 .vscode
-dataset_statistics
 __pycache__
+cross_val_scores
+models
+*.csv
+*.xls
+.~*
