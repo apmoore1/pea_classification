@@ -10,7 +10,7 @@ This repository contains:
 3. Code to run word list methods e.g. Loughran and McDonald lexicon count based approach.
 4. Code that runs both the BOW and word list methods across multiple different experiments from this dataset.
 5. Models for the trained BOW methods and word list approaches.
-6. A notebook tutorial exploring/loading the dataset, how to run BOW and word list methods, and how to run the pre-trained BOW methods as well as word list methods.
+6. A [notebook tutorial](./notebooks/PEA_Data_Analysis.ipynb) exploring/loading the dataset, how to run BOW and word list methods, and how to run the pre-trained BOW methods as well as word list methods.
 
 ## Requirements
 1. Only been tested on Python 3.6.1
@@ -27,7 +27,8 @@ For those interested the dataset can also be found [here](https://delta.lancs.ac
 1. Performance -- Yes/No
 2. Attribution -- No or Internal, External, Both, and Unsure
 3. Tone/Sentiment -- Positive, Mixed, Neutral, Negative.
-These annotations are some what simplified from what they really are in the data but cover the general meaning of the annotations. Details of the complete list of annotations can be found in the notebook tutorial.
+
+These annotations are some what simplified from what they really are in the data but cover the general meaning of the annotations. Details of the complete list of annotations can be found in the [notebook tutorial.](./notebooks/PEA_Data_Analysis.ipynb)
 
 The data also has various Experiment columns where each column defines if the sentence should be in a particular experiment setup and what label it should be. In all cases the labels are either 1 or 2 thus a binary classification problem. These experiment columns are all named `exp*` where `*` can be from 1-11. The details of the different experiment setups are described below in the Experiments section.
 
