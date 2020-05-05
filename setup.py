@@ -15,7 +15,7 @@ setup(name='pea_classification',
       author_email='andrew.p.moore94@gmail.com',
       license='Apache License 2.0',
       install_requires=[
-          'pandas==0.25.1',
+          'pandas>=0.25.1',
           'xlrd==1.2.0',
           'xlwt==1.3.0',
           'scikit-learn==0.21.3',
