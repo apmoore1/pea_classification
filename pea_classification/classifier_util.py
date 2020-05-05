@@ -22,7 +22,7 @@ def predict_score(model: BaseEstimator, sentences: List[str],
 	:param labels: The true labels associated to the given sentences
 	:returns: A dictionary contaning: 1. Accuracy result with key `Accuracy`, 
 	          2. F1 score for the 1 label with key `F1 Class 1`, 3. F1 
-			  score for the 2 label with key `F1 Class 2`, and 4. Macro F1
+			  score for the 2 label with key `F1 Class 2`, and 4. `Macro F1`
 			  score.
 	'''
 	results = {}

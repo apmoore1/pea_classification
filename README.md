@@ -14,7 +14,7 @@ This repository contains:
 
 ## Requirements
 1. Only been tested on Python 3.6.1
-2. `pip install requirements.txt`
+2. `pip install -r requirements.txt`
 
 ## Data
 The training and test can can be automatically downloaded through this code base of which this is shown how in the tutorial and below:

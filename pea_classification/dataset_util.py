@@ -163,14 +163,16 @@ def spacy_tokenizer() -> Callable[[str], List[str]]:
               will have been tokenised by the English Spacy tokeniser.
     '''
     tok = spacy.blank('en')
-    def _spacy_token_to_text(text: str) -> Callable[[str], List[str]]:
+    def _spacy_token_to_text(text: str) -> List[str]:
         return [spacy_token.text for spacy_token in tok(text) 
                 if not spacy_token.is_space]
     return _spacy_token_to_text
 
 def get_experiment_data(data: pd.DataFrame, experiment_id: str, 
                         sentence_column: str, return_ids: bool = False
-                        ) -> Tuple[List[str], np.ndarray]:
+                        ) -> Union[Tuple[List[str], np.ndarray],
+                                   Tuple[List[str], np.ndarray,
+                                         Dict[str, List[int]]]]:
     '''
     :param data: Data that contains a column with 1, 2 or empty values where the 
                  empty value rows are to be removed and the rest to be extracted.
@@ -182,10 +184,10 @@ def get_experiment_data(data: pd.DataFrame, experiment_id: str,
     :returns: A Tuple of 2 values: 1. A list of sentences, 2. An array of 1 and 
               2 values, the sentences are associated to the 1 or 2 values that 
               can be used to train a classifier to predict the 1 or 2 values 
-              from the associated sentence. If sentence_column is True then 
+              from the associated sentence. If return_ids is True then 
               the Tuple will have an extra value a dictionary of ids and values 
               where the values are the same length as the number of sentences 
-              and each value acorss the column names creates a unique ID for 
+              and each value across the column names creates a unique ID for 
               the sentence and labels.
     '''
     experiment_data = data.loc[data[experiment_id].isin([1,2])].copy()
@@ -196,9 +198,9 @@ def get_experiment_data(data: pd.DataFrame, experiment_id: str,
                  f'the number of labels {labels.shape[0]}')
     assert len(sentences) == labels.shape[0], shape_err
 
-    document_id = experiment_data.loc[:, 'DocumentID'].tolist()
-    sentence_id = experiment_data.loc[:, 'SentenceID'].tolist()
-    sentmain_id = experiment_data.loc[:, 'SentmainID'].tolist()
+    document_id: List[int] = experiment_data.loc[:, 'DocumentID'].tolist()
+    sentence_id: List[int] = experiment_data.loc[:, 'SentenceID'].tolist()
+    sentmain_id: List[int] = experiment_data.loc[:, 'SentmainID'].tolist()
     assert len(document_id) == labels.shape[0]
     assert len(sentence_id) == labels.shape[0]
     assert len(sentmain_id) == labels.shape[0]
@@ -264,9 +266,8 @@ def _http_get(url: str, temp_file: IO) -> None:
             if chunk:  # filter out keep-alive new chunks
                 temp_file.write(chunk)
 
-def _get_from_cache(url: str, cache_dir: str = None) -> Path:
+def _get_from_cache(url: str, cache_dir: Union[str, Path]) -> Path:
     '''
-
     Adapted from Allennlp library:
     https://github.com/allenai/allennlp/blob/master/allennlp/common/file_utils.py#L218
     '''
@@ -301,7 +302,8 @@ def _get_from_cache(url: str, cache_dir: str = None) -> Path:
                 json.dump(meta, meta_file)
     return cache_path.resolve()
 
-def get_dataset(url_or_filename: Optional[Union[Path, str]] = None, cache_dir: str = None
+def get_dataset(url_or_filename: Optional[Union[Path, str]] = None, 
+                cache_dir: str = None
                 ) -> pd.DataFrame:
     '''
     Adapted from Allennlp library:
@@ -319,11 +321,12 @@ def get_dataset(url_or_filename: Optional[Union[Path, str]] = None, cache_dir: s
                       `USER_HOME_PATH/.pea_classification`
     :returns: The pea classification dataset as a pandas dataframe.
     '''
+    path_cache_dir: Path
     if cache_dir is None:
-        cache_dir = CACHE_DIRECTORY
+        path_cache_dir = CACHE_DIRECTORY
     else:
-        cache_dir = Path(cache_dir).resolve()
-    cache_dir.mkdir(parents=True, exist_ok=True)
+        path_cache_dir = Path(cache_dir).resolve()
+    path_cache_dir.mkdir(parents=True, exist_ok=True)
     
     if url_or_filename is None:
         url_or_filename = DATASET_URL
@@ -333,7 +336,7 @@ def get_dataset(url_or_filename: Optional[Union[Path, str]] = None, cache_dir: s
     dataset_fp = None
     if parsed.scheme in ("http", "https"):
         # URL, so get it from the cache (downloading if necessary)
-        dataset_fp = _get_from_cache(url_or_filename, cache_dir)
+        dataset_fp = _get_from_cache(url_or_filename, path_cache_dir)
     else:
         dataset_fp = Path(url_or_filename).resolve()
         if not dataset_fp.exists():

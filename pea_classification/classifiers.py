@@ -182,7 +182,6 @@ class WordListClassifier(BaseEstimator, ClassifierMixin):
     assigned the positive label else negative for the following list:
     1. MW_TYPE
 
-
     The following 
     :param word_list: Name of the word list to be used to classify sentences. 
                       Acceptable word list names: 1. L&M, 2. HEN_08, 3. HEN_06,
@@ -336,4 +335,4 @@ class WordListClassifier(BaseEstimator, ClassifierMixin):
                                 f'associated to any classification task. Tasks '
                                 f'and word list names are the following. '
                                 f'tone/sentiment {sentiment_lists}. attribution '
-                                f'{attribute}. attribution type {attribute_type}')
+                                f'{attribution}. attribution type {attribute_type}')
