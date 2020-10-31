@@ -69,11 +69,19 @@ As we have stated the machine learning methods here we describe the different wo
 1. [Loughran & McDonald (L&M)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2504147) -- Sentiment/Tone experiments as well as `exp10a` and `exp10b`
 2. [Henry 2008 (HEN_08)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=933100) -- Sentiment/Tone experiments as well as `exp10a` and `exp10b`
 3. [Henry 2006 (HEN_06)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=958749) -- Sentiment/Tone experiments as well as `exp10a` and `exp10b`
-4. [Zhang and Aerts 2015 (ZA_2015)](http://dx.doi.org/10.1080/00014788.2015.1048771) -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`)
-5. [Dikoli et al. 2016 (Dikoli_2016)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2131476) -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`)
-6. [Martin Walker All (MW_ALL)]() -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`)
-7. [Martin Walker 50 (MW_50)]() -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`)
-8. [Martin Walker Attribution Type (MW_TYPE)]() -- Attribution type only (`exp5`)
+4. [Zhang et al. 2019 (LIWC)](https://onlinelibrary.wiley.com/doi/full/10.1111/jbfa.12351) -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`).
+5. [Dikoli et al. 2020 (DIK)](https://meridian.allenpress.com/accounting-review/article-abstract/95/2/61/429958/CEO-Behavioral-Integrity-Auditor-Responses-and?redirectedFrom=fulltext) -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`).
+6. [ATT_ALL]() -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`).
+7. [ATT_50]() -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`)
+8. [Martin Walker Attribution Type (ATT_TYPE)]() -- Attribution type only (`exp5`)
+
+For historical code release reasons in this code the following word lists are called:
+1. `LIWC` is called `ZA_2015`
+2. `DIK` is called `Dikoli_2016`
+3. `ATT_ALL` is called `MW_ALL`
+4. `ATT_50` is called `MW_50`
+5. `ATT_TYPE` is called `MW_TYPE`
+
 Further more compared to the original word lists these come from we lower case all words and try to find the words relevant US and UK equivalent words using a dictionary derived from [tysto.com](http://www.tysto.com/uk-us-spelling-list.html). For a full list of all of these US to UK and vice versa see `pea_classification.word_list_util.US2UK`. 
 
 
