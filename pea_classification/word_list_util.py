@@ -908,8 +908,8 @@ def download_and_read_word_list(word_list_name: str) -> List[str]:
                      'HEN 06 neg': 'https://delta.lancs.ac.uk/cfie/pea_classification_zoo/raw/master/word_lists/sentiment/HenryNeg2006.txt?inline=false',
                      'MW TYPE INT': 'https://delta.lancs.ac.uk/cfie/pea_classification_zoo/raw/master/word_lists/attribution_type/InternalAtt.txt?inline=false',
                      'MW TYPE EXT': 'https://delta.lancs.ac.uk/cfie/pea_classification_zoo/raw/master/word_lists/attribution_type/ExternalAtt.txt?inline=false',
-                     'Dikoli_2016': 'https://delta.lancs.ac.uk/cfie/pea_classification_zoo/raw/master/word_lists/attribution/DIKOLLI.txt?inline=false',
-                     'MW_ALL': 'https://delta.lancs.ac.uk/cfie/pea_classification_zoo/raw/master/word_lists/attribution/MW_ALL.txt?inline=false',
-                     'MW_50': 'https://delta.lancs.ac.uk/cfie/pea_classification_zoo/raw/master/word_lists/attribution/MW_50.txt?inline=false',
-                     'ZA_2015': 'https://delta.lancs.ac.uk/cfie/pea_classification_zoo/raw/master/word_lists/attribution/ZA.txt?inline=false'}
+                     'Dikoli_2016': 'https://delta.lancs.ac.uk/cfie/pea_classification_zoo/raw/master/word_lists/attribution/DIK.txt?inline=false',
+                     'MW_ALL': 'https://delta.lancs.ac.uk/cfie/pea_classification_zoo/raw/master/word_lists/attribution/ATT_ALL.txt?inline=false',
+                     'MW_50': 'https://delta.lancs.ac.uk/cfie/pea_classification_zoo/raw/master/word_lists/attribution/ATT_50.txt?inline=false',
+                     'ZA_2015': 'https://delta.lancs.ac.uk/cfie/pea_classification_zoo/raw/master/word_lists/attribution/LIWC.txt?inline=false'}
     return read_word_list(_get_from_cache(list_name_url[word_list_name], cache_dir))
