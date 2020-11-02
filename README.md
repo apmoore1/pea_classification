@@ -65,15 +65,15 @@ Further more each machine learning method has there own specific parameters they
 5. MLP NN
     * NN dimensions: One of the following: [(50,), (100, 50), (50, 25), (75, 35)]. Where (50,) means one layer NN with the first layer of size 50 and (100, 50) means two layer NN with the first layer of size 100 and the second 50.
 
-As we have stated the machine learning methods here we describe the different word lists that we will use to classify the data as well. Unlike the machine learning methods these word lists only make sense to use in certain experiments therefore in the list we will state the experiments they will be used in:
-1. [Loughran & McDonald (L&M)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2504147) -- Sentiment/Tone experiments as well as `exp10a` and `exp10b`
-2. [Henry 2008 (HEN_08)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=933100) -- Sentiment/Tone experiments as well as `exp10a` and `exp10b`
-3. [Henry 2006 (HEN_06)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=958749) -- Sentiment/Tone experiments as well as `exp10a` and `exp10b`
-4. [Zhang et al. 2019 (LIWC)](https://onlinelibrary.wiley.com/doi/full/10.1111/jbfa.12351) -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`).
-5. [Dikoli et al. 2020 (DIK)](https://meridian.allenpress.com/accounting-review/article-abstract/95/2/61/429958/CEO-Behavioral-Integrity-Auditor-Responses-and?redirectedFrom=fulltext) -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`).
-6. [ATT_ALL]() -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`).
-7. [ATT_50]() -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`)
-8. [Martin Walker Attribution Type (ATT_TYPE)]() -- Attribution type only (`exp5`)
+As we have stated the machine learning methods here we describe the different word lists that we will use to classify the data as well. Unlike the machine learning methods these word lists only make sense to use in certain experiments therefore in the list we will state the experiments they will be used in, the links go to the corresponding publicly available word list:
+1. Loughran & McDonald (L&M) [Positive](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/sentiment/LMpos.txt) and [Negative](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/sentiment/LMneg.txt) -- Sentiment/Tone experiments as well as `exp10a` and `exp10b`. [Related paper.](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2504147)
+2. Henry 2008 (HEN_08) [Positive](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/sentiment/HenryPos2008.txt) and [Negative](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/sentiment/HenryNeg2008.txt) -- Sentiment/Tone experiments as well as `exp10a` and `exp10b`. [Related paper.](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=933100)
+3. Henry 2006 (HEN_06) [Positive](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/sentiment/HenryPos2006.txt) and [Negative](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/sentiment/HenryNeg2006.txt) -- Sentiment/Tone experiments as well as `exp10a` and `exp10b`. [Related paper.](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=958749)
+4. [Zhang et al. 2019 (LIWC)](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/attribution/LIWC.txt) -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`). [Related paper.](https://onlinelibrary.wiley.com/doi/full/10.1111/jbfa.12351)
+5. [Dikoli et al. 2020 (DIK)](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/attribution/DIK.txt) -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`). [Related paper.](https://meridian.allenpress.com/accounting-review/article-abstract/95/2/61/429958/CEO-Behavioral-Integrity-Auditor-Responses-and?redirectedFrom=fulltext)
+6. [ATT_ALL](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/attribution/ATT_ALL.txt) -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`).
+7. [ATT_50](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/attribution/ATT_50.txt) -- Attribution only (`exp3`, `exp4`, `exp6a`, `exp6b`).
+8. Martin Walker Attribution Type (ATT_TYPE) [Internal](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/attribution_type/InternalAtt.txt) and [External](https://delta.lancs.ac.uk/cfie/pea_classification_zoo/blob/master/word_lists/attribution_type/ExternalAtt.txt) -- Attribution type only (`exp5`).
 
 For historical code release reasons in this code the following word lists are called:
 1. `LIWC` is called `ZA_2015`
