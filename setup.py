@@ -21,7 +21,7 @@ setup(name='pea_classification',
           'scikit-learn==0.21.3',
           'imbalanced-learn==0.5.0',
           'requests>=2.18',
-          'joblib==0.14.0',
+          'joblib==1.2.0',
           'spacy==2.2.1',
           'openpyxl==3.0.0'
       ],
